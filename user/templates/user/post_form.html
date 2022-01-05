@@ -1,0 +1,9 @@
+ <h3>Post Form</h3>
+ <a href="{% url 'post' %}">Go back</a>
+
+ <form action="" method="post">
+     {% csrf_token %}
+     {{form.as_p}}
+     <input type="submit" value='submit'>
+ </form>
+   

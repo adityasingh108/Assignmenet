@@ -1,0 +1,23 @@
+<h3><a href="{% url 'create_product' %}"> Add  Product</a></h3>
+<table>
+    <h1> My product list</h1>
+    <tr> 
+        <th>Item</th>
+        <th> View </th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    {% for pr in product %}
+    <tr>
+        <td>{{pr.name}}</td>
+        <td><a href="{% url 'product_detail' pr.id %}"> View</a></td>
+        <td><a href="{% url 'product_update' pr.id %}"> Edit</a></td>
+        <td><a href="{% url 'product_delete' pr.id %}"> Delete</a></td>
+
+    </tr>
+
+    {% empty %}
+    <h3>No Product in the list</h3>
+
+    {% endfor %}
+</table>
